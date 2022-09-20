@@ -1,0 +1,88 @@
+/* Custom Style Sheet */ 
+
+/* Modifies the body of the webpage */
+body {
+	background: darkslategray !important
+}
+
+/*Modify the entire navbar*/
+.mynav {
+	background-image:  url(mountains.jpg);
+}
+
+
+/*Modify the navbar links*/
+.navbar-light .navbar-nav .nav-link {
+	color: palevioletred !important;
+}
+
+/*Modify the navbar brand*/
+.navbar-brand {
+	margin-left: 30px;
+}
+
+/*Modify all the navbar links*/
+.nav-item {
+	padding-right: 30px;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+	padding-left: 30px !important;
+}
+
+.jumbotron {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	border-radius: 4.299999999999997rem;
+}
+
+.carousel {
+	margin-top:  35px;
+	margin-bottom: 35px;
+}
+
+/* Modify links on topics page */
+
+.myslide2 {
+	background-image: url(mountains2.jpg);
+}
+
+	
+@media only screen and (max-width 991px) {
+	.mrt a {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		}
+}
+
+
+.carousel-caption {
+	align-self: center;
+}
+
+
+.carousel-item img {
+    position: relative;
+    object-fit:unset;
+    top: 0;
+    left: 0;
+    
+
+}
+
+
+.content .container {
+	max-height: 350px;
+}
+
+.carousel .item.left img{
+    width: 100% !important;
+}
+
+.carousel {
+    margin-bottom: 2.5rem!important;
+}
+
+.B1 {
+	margin-right: 4px;
+}

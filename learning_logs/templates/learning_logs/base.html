@@ -1,0 +1,73 @@
+{% load bootstrap4 %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, 
+	shrink-to-fit=no">
+
+
+  <title>Learning Log</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'learning_logs/custom.css' %}">
+
+  {% bootstrap_css %}
+  {% bootstrap_javascript jquery='full' %}
+
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light mb-1 mynav"> 
+     
+   
+
+
+
+<!---this is where I added the color for the brand in the navbar and made it larger with the style statement--->
+    
+	<a class="navbar-brand h1" style="color:palevioletred;font-size:36px" href="{% url 'learning_logs:index' %}">
+	Learning Log </a>
+	 
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+	  data-target="#navbarCollapse" aria-controls="navbarCollapse"
+	  aria-expanded="false" aria-label="Toggle navigation">
+	 <span class="navbar-toggler-icon"></span></button>
+   <div class="collapse navbar-collapse" id="navbarCollapse">
+   	<ul class="navbar-nav mr-auto">
+   	  <li class="nav-item">
+   	  	<a class="nav-link" href="{% url 'learning_logs:topics'%}">
+   	  	Topics</a></li>
+   	</ul>
+   	<ul class="navbar-nav ml-auto">
+   	  {% if user.is_authenticated %}
+   	   <li class="nav-item">
+   	   	 <span class="navbar-text" style="color:palevioletred">Hello, {{ user.username }}.</span>
+   	   </li>
+   	   <li class="nav-item">
+   	   	 <a class="nav-link" href="{% url 'users:logout' %}">Log out</a>
+   	   </li>
+   	  {% else %}
+   	    <li class="nav-item">
+   	      <a class="nav-link" href="{% url 'users:register' %}">Register</a>
+   	    </li>
+   	    <li class="nav-item">
+   	      <a class="nav-link" href="{% url 'users:login' %}">Log in</a></li>
+   	  {% endif %}
+   	</ul>
+  </div>
+ </nav>
+
+ <main role="main" class="container">
+   <div class="pb-2 py-2 mb-2 border-bottom align-items-center justify-items-center">
+      {% block page_header %}{% endblock page_header %}
+   </div>
+   <div>
+     {% block content %}{% endblock content %}
+   </div>
+ </main>
+</body>
+
+</html>
